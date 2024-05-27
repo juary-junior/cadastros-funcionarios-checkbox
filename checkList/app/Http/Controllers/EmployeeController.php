@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        return view('index', compact('employees'));
+        return view('index', compact('employees')); 
     }
 
    public function deleteAll(Request $request) {
@@ -89,4 +89,18 @@ class EmployeeController extends Controller
         Employee::where('id',$id)->delete();
         return redirect()->route('employee-index');
     }
+
+    public function search(Request $request) 
+{
+    $search = $request->search;
+
+    $employees = Employee::where(function($query) use ($search) {
+        $query->where('id', 'like', "%$search%")
+              ->orWhere('name', 'like', "%$search%")
+              ->orWhere('email', 'like', "%$search%");
+    })->get();
+
+    return view('index', compact('employees', 'search'));
+}
+
 }

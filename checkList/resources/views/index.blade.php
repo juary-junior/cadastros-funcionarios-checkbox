@@ -15,15 +15,10 @@
             <a href="{{ route('employee-create') }}" class="btn btn-success">Adicionar novo funcionário</a>
         </div>
         <div class="col-md-4 pb-2">
-            <form method="get" action="employee">
+            <form method="get" action="/search">
                 <div class="input-group">
-                    <select class="form-select" name="date_filter">
-                        <option value="">Todas as Datas</option>
-                        <option value="today">hoje</option>
-                        <option value="yesterday">ontem</option>
-                        <option value="this_week">Essa semana</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary">filtro</button>
+                <input type="text" name="search" placeholder="Pesquise...">
+                <button onclick="searchEmployee()">Pesquisa</button>
                 </div>
             </form>
         </div>
