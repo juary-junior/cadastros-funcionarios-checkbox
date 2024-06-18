@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center text-danger pt-4">Excluir várias Recomendações <hr></h1>
+    <h1 class="text-center text-danger pt-4">Lista de Funcionários <hr></h1>
     <div class="row py-2">
         <div class="col-md-8 pb-2">
             <a href="#" class="btn btn-danger" id="deleteAllSelectedRecord">Excluir todos selecionados</a>
